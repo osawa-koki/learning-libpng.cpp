@@ -14,4 +14,6 @@ for item in "${items[@]}"
 do
   echo "Running $item"
   ./bin/$item
+  cp $item.png ./dist/$item.png
+  echo "$item\n" >> ./dist/items.txt
 done
