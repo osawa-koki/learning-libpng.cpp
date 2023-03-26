@@ -4,8 +4,8 @@
 #include <cstring>
 
 #define OUTPUT_FILE "simple.png"
-#define WIDTH 256
-#define HEIGHT 256
+#define WIDTH 250
+#define HEIGHT 250
 #define COLOR 0x000ff
 
 int main() {
