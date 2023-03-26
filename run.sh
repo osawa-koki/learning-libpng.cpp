@@ -9,6 +9,7 @@ items=(
   "circle"
   "ellipse"
   "line"
+  "polyline"
 )
 
 for item in "${items[@]}"
