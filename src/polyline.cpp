@@ -8,7 +8,7 @@
 #define WIDTH 250
 #define HEIGHT 250
 #define COLOR 0xff0000
-#define BACKGROUND_COLOR 0x00f000
+#define BACKGROUND_COLOR 0x0000ff
 #define POINTS {50, 50, 100, 200, 200, 150}
 
 int main() {
