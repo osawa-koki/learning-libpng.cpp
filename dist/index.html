@@ -4,6 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>learning-libpng.cpp</title>
+  <style>
+    body {
+      font-family: 'Consolas';
+    }
+    #ImageContainer {
+      width: 1200px;
+      max-width: 100%;
+      padding: 0.5rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #ImageContainer .ImageBox {
+      padding: 0.3rem;
+      margin: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+    }
+  </style>
 </head>
 <body>
   <h1>learning-libpng.cpp</h1>
@@ -13,12 +31,18 @@
       .then(response => response.text())
       .then(text => {
         const items = text.split('\n');
+        const div = document.createElement("div");
+        div.classList.add("ImageBox");
         items.forEach(item => {
+          const h2 = document.createElement('h2');
+          h2.textContent = item;
+          div.appendChild(h2);
           const img = document.createElement('img');
           img.src = `./${item}.png`;
           img.alt = item;
+          div.appendChild(img);
         });
-        document.getElementById("ImageContainer").appendChild(img);
+        document.getElementById("ImageContainer").appendChild(div);
       });
   </script>
 </body>
