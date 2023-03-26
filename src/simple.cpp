@@ -6,9 +6,10 @@
 #define OUTPUT_FILE "simple.png"
 #define WIDTH 256
 #define HEIGHT 256
+#define COLOR 0x000ff
 
 int main() {
-  int color = 0x0000ff; // blue color
+  int color = COLOR;
 
   FILE* fp = fopen(OUTPUT_FILE, "wb");
   if (!fp) {
@@ -30,9 +31,9 @@ int main() {
   for (int y = 0; y < HEIGHT; ++y) {
     for (int x = 0; x < WIDTH; ++x) {
       png_bytep pixel = &(row[x * 3]);
-      pixel[0] = 0x00; // Red
-      pixel[1] = 0x00; // Green
-      pixel[2] = color & 0xff; // Blue
+        pixel[0] = (color >> 16) & 0xff; // Red
+        pixel[1] = (color >> 8) & 0xff; // Green
+        pixel[2] = (color >> 0) & 0xff; // Blue
     }
     png_write_row(png_ptr, &row[0]);
   }
