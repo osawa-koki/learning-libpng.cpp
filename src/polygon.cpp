@@ -6,10 +6,13 @@
 #define OUTPUT_FILE "polygon.png"
 #define WIDTH 250
 #define HEIGHT 250
+#define COLOR 0x000ff
+#define BACKGROUND_COLOR 0xff0000
 #define POLYGON_POINTS {50, 180, 100, 80, 150, 80, 200, 180}
 
 int main() {
-  int color = 0xff00ff; // purple color
+  int color = COLOR;
+  int background_color = BACKGROUND_COLOR;
 
   std::vector<int> polygon_points = POLYGON_POINTS;
 
@@ -46,13 +49,13 @@ int main() {
       if (inside_polygon) {
         png_bytep pixel = &(row[x * 3]);
         pixel[0] = (color >> 16) & 0xff; // Red
-        pixel[1] = (color >> 8) & 0xff;  // Green
-        pixel[2] = color & 0xff;     // Blue
+        pixel[1] = (color >> 8) & 0xff; // Green
+        pixel[2] = (color >> 0) & 0xff; // Blue
       } else {
         png_bytep pixel = &(row[x * 3]);
-        pixel[0] = 0x00; // Red
-        pixel[1] = 0x00; // Green
-        pixel[2] = 0xff; // Blue
+        pixel[0] = (background_color >> 16) & 0xff; // Red
+        pixel[1] = (background_color >> 8) & 0xff; // Green
+        pixel[2] = (background_color >> 0) & 0xff; // Blue
       }
     }
 
