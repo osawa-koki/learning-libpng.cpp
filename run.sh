@@ -8,6 +8,7 @@ items=(
   "polygon"
   "circle"
   "ellipse"
+  "line"
 )
 
 for item in "${items[@]}"
