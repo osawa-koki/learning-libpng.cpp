@@ -13,14 +13,14 @@
 #define SQUARE_SIZE 100 // Size of square in pixels
 
 int main() {
+  int color = COLOR;
+  int background_color = BACKGROUND_COLOR;
+  
   FILE* fp = fopen(OUTPUT_FILE, "wb");
   if (!fp) {
     std::cout << "Error: Failed to create file" << std::endl;
     return -1;
   }
-
-  int color = COLOR;
-  int background_color = BACKGROUND_COLOR;
 
   png_structp png_ptr;
   png_infop info_ptr;
