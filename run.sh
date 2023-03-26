@@ -15,5 +15,5 @@ do
   echo "Running $item"
   ./bin/$item
   cp $item.png ./dist/$item.png
-  echo "$item\n" >> ./dist/items.txt
+  echo "$item" >> ./dist/items.txt
 done
